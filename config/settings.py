@@ -73,7 +73,8 @@ THIRD_APPS = [
     "drf_spectacular",
     "drf_spectacular_sidecar",
     "django_reportbroD.apps.ReportbrodConfig",
-    'djoser',
+    "djoser",
+    "corsheaders",
 ]
 PRIORITY_THIRD_APPS = [
     "jazzmin",
@@ -81,6 +82,7 @@ PRIORITY_THIRD_APPS = [
 INSTALLED_APPS = PRIORITY_THIRD_APPS + BASE_APPS + THIRD_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -338,3 +340,5 @@ LOGGING = {
         },
     },
 }
+
+CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(",")

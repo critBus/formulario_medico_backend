@@ -25,3 +25,4 @@ django-solo==2.1.0
 django-crum==0.7.9
 django-extensions==3.2.3
 djoser==2.2.2
+django-cors-headers==4.3.1

@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path,re_path
+from django.urls import include, path, re_path
 
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -35,7 +35,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("apps.users.urls")),
     path("", include("apps.formulario.urls")),
-    re_path(r'^auth/', include('djoser.urls')),
+    re_path(r"^auth/", include("djoser.urls")),
     # YOUR PATTERNS
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
