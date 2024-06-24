@@ -52,7 +52,7 @@ class FormularioAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Remision",
+            "REMISIÓN",
             {
                 "fields": (
                     "remision",
@@ -64,7 +64,7 @@ class FormularioAdmin(admin.ModelAdmin):
             "ANAMNESIS",
             {
                 "fields": (
-                    "motivo_consulta",
+                    "motivo_de_consulta",
                     "primer_sintoma",
                     "tiempo_de_aparicion",
                     "otros_sintomas",
@@ -130,6 +130,77 @@ class FormularioAdmin(admin.ModelAdmin):
                     "otros_tac_cuello",
                     "otros_tac_torax",
                     "otros_rmn",
+                ),
+            },
+        ),
+        (
+            "ANATOMÍA PATOLÓGICA",
+            {
+                "fields": (
+                    "biopsia_numero",
+                    "fecha_de_diagnostico",
+                    "diagnostico_topografico",
+                    "diagnostico_morfologico",
+                    "diagnosticado_en",
+                    "diagnostico_topografico_selecciona",
+                    "diagnostico_morfologico_selecciona",
+                    "diagnosticado_en_selecciona",
+                    "grado_de_diferenciacion",
+                    "base_del_diagnostico",
+                    "otras",
+                ),
+            },
+        ),
+        (
+            "ESTADIAMIENTO",
+            {
+                "fields": (
+                    "etapa_clinica",
+                    "metastasis_a_distancia",
+                    "extension_clinica",
+                ),
+            },
+        ),
+        (
+            "TRATAMIENTO",
+            {
+                "fields": (
+                    "en_otro_centro",
+                    "en_la_institucion",
+                    "tratamiento_planificado",
+                    "otro_tratamiento_planificado",
+                    "inclusion_en_ec",
+                    "en_caso_de_si",
+                ),
+            },
+        ),
+        (
+            "DESCRIPCIÓN DEL TRATAMIENTO",
+            {
+                "fields": (
+                    "tratamiento_quirurgico",
+                    "tipo_de_cirugia",
+                    "fecha_del_tratamiento_quirurgico",
+                    "tratamiento_radioterapia",
+                    "tipo_de_tratamiento_radioterap",
+                    "fecha_del_inicio_del_tratamiento_radioterapeutico",
+                    "fecha_del_final_del_tratamiento_radioterapeutico",
+                    "dosis_total",
+                    "gy_fraccion",
+                    "tratamiento_quimioterapia",
+                    "esquema_tratamiento",
+                    "numero_de_ciclos",
+                    "fecha_del_inicio_del_tratamiento_quimioterapeutico",
+                    "fecha_del_final_del_tratamiento_quimioterapeutico",
+                    "otro_tratamiento",
+                    "cual_tratamiento",
+                    "fecha_del_inicio_del_tratamiento",
+                    "fecha_del_final_del_tratamiento",
+                    "evaluacion_de_la_respuesta",
+                    "fecha_evaluacion",
+                    "observaciones",
+                    "nombre_del_medico",
+                    "registro_profesional",
                 ),
             },
         ),
