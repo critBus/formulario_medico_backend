@@ -997,11 +997,11 @@ class Formulario(models.Model):
 
     tnm_M = models.CharField(verbose_name="TNM M", max_length=256,blank= True,null= True)
 
-    ptnm_pT = models.CharField(verbose_name="TNM pT", max_length=256,blank= True,null= True)
+    ptnm_pT = models.CharField(verbose_name="pTNM pT", max_length=256,blank= True,null= True)
 
-    ptnm_pN = models.CharField(verbose_name="TNM pN", max_length=256,blank= True,null= True)
+    ptnm_pN = models.CharField(verbose_name="pTNM pN", max_length=256,blank= True,null= True)
 
-    ptnm_pM = models.CharField(verbose_name="TNM pM", max_length=256,blank= True,null= True)
+    ptnm_pM = models.CharField(verbose_name="pTNM pM", max_length=256,blank= True,null= True)
 
     metastasis_a_distancia = models.CharField(
         verbose_name="Metástasis a distancia",
@@ -1215,7 +1215,7 @@ class Formulario(models.Model):
     dosis_total = models.DecimalField(
         null=True,
         blank=True,
-        verbose_name="Gosis totaD",
+        verbose_name="Dosis total",
         decimal_places=2,
         max_digits=15,
         default=0,
