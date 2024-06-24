@@ -156,6 +156,12 @@ class FormularioAdmin(admin.ModelAdmin):
             {
                 "fields": (
                     "etapa_clinica",
+                    "tnm_T",
+                    "tnm_N",
+                    "tnm_M",
+                    "ptnm_pT",
+                    "ptnm_pN",
+                    "ptnm_pM",
                     "metastasis_a_distancia",
                     "extension_clinica",
                 ),

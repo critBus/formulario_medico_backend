@@ -991,8 +991,20 @@ class Formulario(models.Model):
         ],
     )
 
+    tnm_T = models.CharField(verbose_name="TNM T", max_length=256,blank= True,null= True)
+
+    tnm_N = models.CharField(verbose_name="TNM N", max_length=256,blank= True,null= True)
+
+    tnm_M = models.CharField(verbose_name="TNM M", max_length=256,blank= True,null= True)
+
+    ptnm_pT = models.CharField(verbose_name="TNM pT", max_length=256,blank= True,null= True)
+
+    ptnm_pN = models.CharField(verbose_name="TNM pN", max_length=256,blank= True,null= True)
+
+    ptnm_pM = models.CharField(verbose_name="TNM pM", max_length=256,blank= True,null= True)
+
     metastasis_a_distancia = models.CharField(
-        verbose_name="c",
+        verbose_name="Metástasis a distancia",
         max_length=256,
         choices=[
             (
