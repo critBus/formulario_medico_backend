@@ -47,7 +47,7 @@ class Formulario(models.Model):
         verbose_name="Diagnóstico histológico",
     )
 
-    motivo_de_consulta = models.CharField(
+    motivo_consulta = models.CharField(
         verbose_name="Motivo de consulta",
         max_length=256,
         choices=[

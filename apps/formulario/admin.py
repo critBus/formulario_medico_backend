@@ -64,7 +64,7 @@ class FormularioAdmin(admin.ModelAdmin):
             "ANAMNESIS",
             {
                 "fields": (
-                    "motivo_de_consulta",
+                    "motivo_consulta",
                     "primer_sintoma",
                     "tiempo_de_aparicion",
                     "otros_sintomas",
