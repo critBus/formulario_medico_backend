@@ -73,7 +73,6 @@ THIRD_APPS = [
     "drf_spectacular",
     "drf_spectacular_sidecar",
     "django_reportbroD.apps.ReportbrodConfig",
-    "djoser",
     "corsheaders",
 ]
 PRIORITY_THIRD_APPS = [
