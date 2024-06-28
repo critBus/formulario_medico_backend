@@ -40,7 +40,7 @@ class UserManager(BaseUserManager):
             first_name,
             last_name,
             password,
-            False,
+            True,
             False,
             **extra_fields,
         )
@@ -80,7 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=True,
         verbose_name="Activo",
     )
-    is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=True)
 
     objects = UserManager()
 
