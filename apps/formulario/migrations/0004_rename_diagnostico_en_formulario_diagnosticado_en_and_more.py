@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("formulario", "0003_alter_formulario_dosis_total_and_more"),
     ]

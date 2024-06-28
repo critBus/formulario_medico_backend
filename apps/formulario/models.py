@@ -1,7 +1,7 @@
 from turtle import mode
+
 from django.core.exceptions import ValidationError
-from django.core.validators import RegexValidator
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.db import models
 
 
@@ -991,17 +991,29 @@ class Formulario(models.Model):
         ],
     )
 
-    tnm_T = models.CharField(verbose_name="TNM T", max_length=256,blank= True,null= True)
+    tnm_T = models.CharField(
+        verbose_name="TNM T", max_length=256, blank=True, null=True
+    )
 
-    tnm_N = models.CharField(verbose_name="TNM N", max_length=256,blank= True,null= True)
+    tnm_N = models.CharField(
+        verbose_name="TNM N", max_length=256, blank=True, null=True
+    )
 
-    tnm_M = models.CharField(verbose_name="TNM M", max_length=256,blank= True,null= True)
+    tnm_M = models.CharField(
+        verbose_name="TNM M", max_length=256, blank=True, null=True
+    )
 
-    ptnm_pT = models.CharField(verbose_name="pTNM pT", max_length=256,blank= True,null= True)
+    ptnm_pT = models.CharField(
+        verbose_name="pTNM pT", max_length=256, blank=True, null=True
+    )
 
-    ptnm_pN = models.CharField(verbose_name="pTNM pN", max_length=256,blank= True,null= True)
+    ptnm_pN = models.CharField(
+        verbose_name="pTNM pN", max_length=256, blank=True, null=True
+    )
 
-    ptnm_pM = models.CharField(verbose_name="pTNM pM", max_length=256,blank= True,null= True)
+    ptnm_pM = models.CharField(
+        verbose_name="pTNM pM", max_length=256, blank=True, null=True
+    )
 
     metastasis_a_distancia = models.CharField(
         verbose_name="Metástasis a distancia",
@@ -1235,18 +1247,24 @@ class Formulario(models.Model):
         verbose_name="Tratamiento quimioterapia",
     )
 
-    esquema_tratamiento = models.CharField(null=True,blank=True,
-        verbose_name="Esquema del tratamiento", max_length=256
+    esquema_tratamiento = models.CharField(
+        null=True, blank=True, verbose_name="Esquema del tratamiento", max_length=256
     )
 
-    numero_de_ciclos = models.PositiveIntegerField(null=True,blank=True, verbose_name="No de ciclos", default=1)
-
-    fecha_del_inicio_del_tratamiento_quimioterapeutico = models.DateField(null=True,blank=True,
-        verbose_name="Fecha del inicio del tratamiento quimioterapeutico"
+    numero_de_ciclos = models.PositiveIntegerField(
+        null=True, blank=True, verbose_name="No de ciclos", default=1
     )
 
-    fecha_del_final_del_tratamiento_quimioterapeutico = models.DateField(null=True,blank=True,
-        verbose_name="Fecha del final del tratamiento quimioterapeutico"
+    fecha_del_inicio_del_tratamiento_quimioterapeutico = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Fecha del inicio del tratamiento quimioterapeutico",
+    )
+
+    fecha_del_final_del_tratamiento_quimioterapeutico = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name="Fecha del final del tratamiento quimioterapeutico",
     )
 
     otro_tratamiento = models.BooleanField(
@@ -1258,12 +1276,12 @@ class Formulario(models.Model):
         verbose_name="Cuál tratamiento", max_length=256, null=True, blank=True
     )
 
-    fecha_del_inicio_del_tratamiento = models.DateField(null=True,blank=True,
-        verbose_name="Fecha del inicio del tratamiento"
+    fecha_del_inicio_del_tratamiento = models.DateField(
+        null=True, blank=True, verbose_name="Fecha del inicio del tratamiento"
     )
 
-    fecha_del_final_del_tratamiento = models.DateField(null=True,blank=True,
-        verbose_name="Fecha del final del tratamiento"
+    fecha_del_final_del_tratamiento = models.DateField(
+        null=True, blank=True, verbose_name="Fecha del final del tratamiento"
     )
 
     evaluacion_de_la_respuesta = models.CharField(
@@ -1381,6 +1399,7 @@ class Formulario(models.Model):
             or esta_vacio(self.cual_tratamiento)
         ):
             raise ValidationError("En csao de seleccionar Otro rellene este campo 101")
+
 
 def esta_vacio(valor):
     return (not valor) or len(str(valor).strip()) == 0

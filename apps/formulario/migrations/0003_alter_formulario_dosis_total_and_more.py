@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("formulario", "0002_remove_formulario_firma_del_medico_and_more"),
     ]

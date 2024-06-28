@@ -1,7 +1,15 @@
 from django.contrib import admin
 
 from .models import *
-from .utils.reportes import generar_reporte_paciente
+from .utils.reportes import crear_reporte_completo_paciente, crear_reporte_paciente
+
+
+def generar_reporte_completo_paciente(modeladmin, request, queryset):
+    return crear_reporte_completo_paciente(queryset)
+
+
+def generar_reporte_paciente(modeladmin, request, queryset):
+    return crear_reporte_paciente(queryset)
 
 
 # Register your models here.
@@ -40,7 +48,7 @@ class FormularioAdmin(admin.ModelAdmin):
         "remision",
         "historia_clinica",
     )
-    actions = [generar_reporte_paciente]
+    actions = [generar_reporte_paciente, generar_reporte_completo_paciente]
     fieldsets = (
         (
             None,
