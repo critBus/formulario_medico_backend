@@ -1187,7 +1187,7 @@ class Formulario(models.Model):
     inclusion_en_ec = models.BooleanField(verbose_name="Inclusión en EC", default=False)
 
     en_caso_de_si = models.CharField(
-        verbose_name="En caso de ser sí; cuál es el código", max_length=256
+        verbose_name="En caso de ser sí; cuál es el código", max_length=256, null=True, blank=True
     )
 
     tratamiento_quirurgico = models.BooleanField(
