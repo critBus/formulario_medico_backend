@@ -4,6 +4,9 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.db import models
 
+NOMBRE_ROL_ADMINISTRADOR = "Administrador"
+NOMBRE_ROL_TRABAJADOR = "Trabajador"
+
 
 def validate_noVacio(value):
     if len(str(value).strip()) == 0:
