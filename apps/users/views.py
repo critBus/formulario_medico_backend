@@ -60,73 +60,7 @@ class User_Update(Base_Update):
 
 
 class User_List(Base_List):
-    """
-    Endpoint para el listado de User.
-
-    GET:
-    Obtiene una lista de todas las entidades de User existentes, opcionalmente filtradas y ordenadas.
-
-
-    **Parámetros de busqueda:**
-
-    No utilizar junto a los parámetros de filtro
-
-    Parametro Principial:
-
-        "search", busca cualquier coincidencia que incluye el valor pasado en el parametro secundario
-        Ejemplo: &search=valor a buscar
-
-    Parametro Secundarios por los que busca:
-
-         - 'password',
-         - 'username',
-         - 'first_name',
-         - 'last_name',
-         - 'phone',
-
-    **Parámetros de ordenamiento:**
-
-    Parametro Principial:
-
-        "ordering", incluir un "-" delante del parametro secundario si se desea ordenar de forma desendiente
-         Ejemplo: &ordering=-parametro secundario
-
-    Parametro Secundarios:
-
-        - 'pk': 'Ordena por su clave primaria (id)',
-        - 'password' : 'Ordena alfabéticamente por el password',
-        - 'last_login' : 'Ordena de forma cronológica asendente o desendente por la last_login',
-        - 'username' : 'Ordena alfabéticamente por el username',
-        - 'email' : 'Ordena alfabéticamente por el email',
-        - 'first_name' : 'Ordena alfabéticamente por el first_name',
-        - 'last_name' : 'Ordena alfabéticamente por el last_name',
-        - 'phone' : 'Ordena alfabéticamente por el phone',
-        - 'created' : 'Ordena de forma cronológica asendente o desendente por la created',
-        - 'edited' : 'Ordena de forma cronológica asendente o desendente por la edited',
-
-    **Paginación:**
-
-    Para el paginado, se puede utilizar el parámetro "page" en la URL para especificar la página que se desea mostrar.
-
-    Por ejemplo, "/entidad?page=2" mostrará la segunda página de productos.
-
-    El primer índice de la lista es ‘page=1’.
-
-    Además para definir el tamaño del paginado se puede utilizar a el parámetro “page_size”.
-
-    Por ejemplo, "/entidad? page_size=3"
-
-    En la respuesta el parámetro "count" representa la cantidad total de elementos resultantes (no la cantidad de elementos en la lista productos del page_size )
-
-    Si no se incluye el ‘page_size’ se retornaran todos los datos sin paginar
-
-    **Rangos numéricos y cronológicos:**
-
-        "/entidad?nombre=nombreABuscar&atributo__gte=10& atributo__lt=16&ordering=nombre"
-        "/entidad?nombre=nombreABuscar&atributo__gte=2024-01-09T20:16:01.825736Z& atributo__lt=2024-01-10T16:02:25.432273Z&ordering=nombre"
-        Usar 'gte', 'lte','gt', 'lt'
-
-    """
+    
 
     serializer_class = UserSerializerRepresentation
     filter_backends = [
@@ -139,20 +73,20 @@ class User_List(Base_List):
         "id": ["exact"],
         "last_login": ["gte", "lte", "gt", "lt", "exact"],
         "is_superuser": ["exact"],
-        "username": ["contains", "exact", "icontains", "search"],
-        "email": ["contains", "exact", "icontains", "search"],
-        "first_name": ["contains", "exact", "icontains", "search"],
-        "last_name": ["contains", "exact", "icontains", "search"],
+        "username": ["contains", "exact", "icontains",],
+        "email": ["contains", "exact", "icontains",],
+        "first_name": ["contains", "exact", "icontains", ],
+        "last_name": ["contains", "exact", "icontains", ],
         "is_active": ["exact"],
         "is_staff": ["exact"],
         "groups__id": ["exact"],
-        "groups__name": ["contains", "exact", "icontains", "search"],
+        "groups__name": ["contains", "exact", "icontains",],
         "groups__permissions__id": ["exact"],
-        "groups__permissions__name": ["contains", "exact", "icontains", "search"],
-        "groups__permissions__codename": ["contains", "exact", "icontains", "search"],
+        "groups__permissions__name": ["contains", "exact", "icontains",],
+        "groups__permissions__codename": ["contains", "exact", "icontains",],
         "user_permissions__id": ["exact"],
-        "user_permissions__name": ["contains", "exact", "icontains", "search"],
-        "user_permissions__codename": ["contains", "exact", "icontains", "search"],
+        "user_permissions__name": ["contains", "exact", "icontains",],
+        "user_permissions__codename": ["contains", "exact", "icontains",],
     }
     search_fields = [
         "username",

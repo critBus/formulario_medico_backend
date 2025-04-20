@@ -31,14 +31,11 @@ class FormularioController(viewsets.ModelViewSet):
 
     filterset_fields = {
         "id": ["exact"],
-        "nombre": ["contains", "exact", "icontains", "search"],
+        
     }
-    search_fields = [
-        "nombre",
-    ]
     ordering_fields = [
         "pk",
-        "nombre",
+        
     ]
     ordering = ["-pk"]
 
