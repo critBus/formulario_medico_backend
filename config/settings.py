@@ -64,7 +64,6 @@ LOCAL_APPS = [
     "apps.formulario",
 ]
 THIRD_APPS = [
-    "django.contrib.postgres",
     "django_extensions",
     "rest_framework",
     "rest_framework_simplejwt",
@@ -106,7 +105,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "django_reportbroD.menus.get_menu_items",
             ],
         },
     },
@@ -119,18 +117,18 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
-    # }
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DATABASE_NAME"),
-        "USER": os.environ.get("DATABASE_USER"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-        "HOST": os.environ.get("POSTGRES_HOST"),
-        "PORT": int(os.environ.get("POSTGRES_PORT")),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": os.environ.get("DATABASE_NAME"),
+    #     "USER": os.environ.get("DATABASE_USER"),
+    #     "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+    #     "HOST": os.environ.get("POSTGRES_HOST"),
+    #     "PORT": int(os.environ.get("POSTGRES_PORT")),
+    # }
 }
 
 
@@ -341,3 +339,6 @@ LOGGING = {
 }
 
 CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(",")
+LOAD_EXAMPLE_DATA = (
+    str(os.environ.get("LOAD_EXAMPLE_DATA", default=False)).lower() == "true"
+)
